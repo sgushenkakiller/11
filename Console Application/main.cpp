@@ -6,15 +6,13 @@
 #include "../Library/Utils.h"
 
 /**
- * @brief Точка входа в программу.
- *
- * @return int - Код завершения программы.
+ * @brief Точка входа в программу.  
  */
 int main() {
 
-    Service internet("Internet", 5.0);
-    Service phone("Phone", 2.5);
-    Service tv("TV", 10.0);
+    auto internet = std::make_shared<Service>("Internet", 5.0);
+    auto phone = std::make_shared<Service>("Phone", 2.5);     
+    auto tv = std::make_shared<Service>("TV", 10.0);
 
     Tariff basicTariff("Basic");
     basicTariff.addService(internet);
